@@ -1,7 +1,7 @@
 {
   "validVersion": [1],
   "selectors": {
-    "packedScript": "script:containsData(eval\\(function \\())"
+    "packedScript": "script:containsData(eval\\(function \\()"
   },
   "regexes": {
     "hunterObfuscation": "eval\\(function \\(\\w,\\w,\\w,\\w,\\w,\\w(?:,[^)]+)?\\)\\{.*?\\}\\(\"([^\"]+)\",\\d+,\"([^\"]+)\",(\\d+),(\\d+),\\d+\\)\\)",
