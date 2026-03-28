@@ -1,0 +1,26 @@
+name: Release marker.json
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: write
+
+jobs:
+    release-marker:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Create or update latest release
+              uses: ncipollo/release-action@v1
+              with:
+                  tag: latest
+                  name: Latest
+                  allowUpdates: true
+                  updateOnlyUnreleased: false
+                  replacesArtifacts: true
+                  artifacts: marker.json
