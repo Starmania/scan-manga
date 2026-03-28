@@ -15,12 +15,14 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
-            - name: Create or update latest release
-              uses: ncipollo/release-action@v1
+            - name: Generate release metadata
+              run: |
+                  echo "RELEASE_TAG=release-$(date -u +'%Y%m%d-%H%M%S')" >> "$GITHUB_ENV"
+                  echo "RELEASE_NAME=$(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> "$GITHUB_ENV"
+
+            - name: Create release
+              uses: softprops/action-gh-release@v2
               with:
-                  tag: latest
-                  name: Latest
-                  allowUpdates: true
-                  updateOnlyUnreleased: false
-                  replacesArtifacts: true
-                  artifacts: marker.json
+                  tag_name: ${{ env.RELEASE_TAG }}
+                  name: ${{ env.RELEASE_NAME }}
+                  files: marker.json
