@@ -4,7 +4,7 @@
     "packedScript": "script:containsData(eval\\(function \\()"
   },
   "regexes": {
-    "hunterObfuscation": "eval\\(function \\( \\w,\\w,\\w,\\w,\\w,\\w(?:,[^)]+)?\\)\\{.*?\\}\\(\"([^\"]+)\",\\d+,\"([^\"]+)\",(\\d+),(\\d+),\\d+\\)\\)",
+    "hunterObfuscation": "eval\\(function\\s*\\(\\s*\\w\\s*,\\s*\\w\\s*,\\s*\\w\\s*,\\s*\\w\\s*,\\s*\\w\\s*,\\s*\\w\\s*(?:,[^)]+)?\\)\\{.*?\\}\\("([^"]+)",\\d+,"([^"]+)",(\\d+),(\\d+),\\d+\\)\\)",
     "smlParam": "sml\\s*=\\s*'([^']+)'",
     "smeParam": "sme\\s*=\\s*'([^']+)'",
     "chapterInfo": "const idc = (\\d+)"
