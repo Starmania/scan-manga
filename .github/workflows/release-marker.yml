@@ -25,4 +25,6 @@ jobs:
               with:
                   tag_name: ${{ env.RELEASE_TAG }}
                   name: ${{ env.RELEASE_NAME }}
-                  files: marker.json
+                  files: |
+                    marker.json
+                    message.json
